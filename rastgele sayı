@@ -1,0 +1,38 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class no : MonoBehaviour
+{
+    [SerializeField] int max; 
+    [SerializeField] int min;
+    [SerializeField] int tahmin;
+    [SerializeField] Text number;
+    void Start()
+    {
+        
+        oyunbaşlangıc();
+    }
+    public void oyunbaşlangıc()
+    {
+        max = max + 1;// max 1500 dü ama en fazla 1499 oluyodu biz 1500 olmasını istediğimiz için max değere bir ekledik 
+        sonrakitahmin();
+    }
+    public void Upforcast()
+    {
+        min = tahmin;
+        sonrakitahmin();
+    }
+    public void downforcast()
+    {
+        max = tahmin;
+        sonrakitahmin();
+    }
+    public void sonrakitahmin()
+    {
+        tahmin = Random.Range(min, max);
+        number.text = tahmin.ToString();
+    }
+}
