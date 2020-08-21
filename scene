@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class scenes : MonoBehaviour
+{
+    // Start is called before the first frame update
+    public void sonrakisahne()
+    {
+        int mevcutSahnenIndeksi = SceneManager.GetActiveScene().buildIndex;// aktif sahnenin build index ini aldık ve bunu int bir değere eitledik
+        SceneManager.LoadScene(mevcutSahnenIndeksi + 1);// eşitlediğimiz değere 1 ekledik
+    }
+    public void oyunSahnesineYönlen()
+    {
+        SceneManager.LoadScene(1);
+    }
+    public void menüSahnesineYönlen()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void cikis()
+    {
+        Application.Quit();
+    }
+}
